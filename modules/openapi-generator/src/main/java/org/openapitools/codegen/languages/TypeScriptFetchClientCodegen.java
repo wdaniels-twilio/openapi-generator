@@ -995,6 +995,10 @@ public class TypeScriptFetchClientCodegen extends AbstractTypeScriptClientCodege
             this.isPrimitiveType = cp.isPrimitiveType;
             this.isModel = cp.isModel;
             this.isExplode = cp.isExplode;
+            //build support for collectionFormatMulti mustache templates in OA3 'explode' style. 
+            if (isExplode && !isCollectionFormatMulti){
+                this.isCollectionFormatMulti = true;
+            }
             this.baseName = cp.baseName;
             this.paramName = cp.paramName;
             this.dataType = cp.dataType;
